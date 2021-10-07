@@ -21,6 +21,7 @@ pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+disableComments  = true
 disqusShortname = "yourdiscussshortname"
 
 [permalinks]
@@ -37,7 +38,8 @@ disqusShortname = "yourdiscussshortname"
   info = "I work in the Clouds ☁"
   avatarURL = "images/BlueAlder_DP.png"
   avatarSize = "size-xl"
-  favicon = "images/favicon/favicon.ico"
+  favicon_32 = "images/favicon/favicon-32x32.png"
+  favicon_16 = "images/favicon/favicon-16x16.png"
   error404 = "There is no such page."
   hideCredits = true
   customCSS = ["css/styles.css"]
@@ -47,12 +49,14 @@ disqusShortname = "yourdiscussshortname"
   icon = "fa fa-github fa-2x"
   weight = 1
   url = "https://github.com/BlueAlder"
+  target = "_blank"
 
 [[params.social]]
   name = "Twitter"
   icon = "fa fa-twitter fa-2x"
   weight = 3
   url = "https://twitter.com/BlueAlder" 
+  target = "_blank"
 
 [[params.social]]
   name = "Email"
@@ -65,6 +69,14 @@ disqusShortname = "yourdiscussshortname"
   icon = "fa fa-linkedin fa-2x"
   weight = 3
   url = "https://www.linkedin.com/in/samuelcalamos/" 
+  target = "_blank"
+
+[[params.social]]
+  name = "Medium"
+  icon = "fa fa-medium fa-2x"
+  weight = 3
+  url = "https://medium.com/@sam.calamos"
+  target = "_blank"
 
 [taxonomies]
   category = "categories"
@@ -74,11 +86,6 @@ disqusShortname = "yourdiscussshortname"
 
 # Menu links
 [[menu.main]]
-  name = "Posts"
+  name = "Blog"
   weight = 1
-  identifier = "posts"
   url  = "posts/"
-[[menu.main]]
-  name = "About"
-  weight = 2
-  url = "about/"

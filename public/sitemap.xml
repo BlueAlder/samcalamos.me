@@ -3,15 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://samcalamos.com.au/categories/</loc>
+    <loc>https://www.samcalamos.com.au/authors/</loc>
   </url>
   
   <url>
-    <loc>https://samcalamos.com.au/</loc>
+    <loc>https://www.samcalamos.com.au/categories/</loc>
   </url>
   
   <url>
-    <loc>https://samcalamos.com.au/tags/</loc>
+    <loc>https://www.samcalamos.com.au/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.samcalamos.com.au/series/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.samcalamos.com.au/tags/</loc>
   </url>
   
 </urlset>
