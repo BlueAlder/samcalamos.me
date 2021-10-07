@@ -1,3 +1,3 @@
-[submodule "themes/vncnt-hugo"]
-	path = themes/vncnt-hugo
-	url = https://github.com/fncnt/vncnt-hugo
+[submodule "themes/hugo-coder"]
+	path = themes/hugo-coder
+	url = https://github.com/luizdepra/hugo-coder.git

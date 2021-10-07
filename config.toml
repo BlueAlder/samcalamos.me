@@ -1,4 +1,4 @@
-baseURL = "https://samcalamos.com.au/"
+baseURL = "https://www.samcalamos.com.au/"
 # include content marked as draft
 buildDrafts = false
 # include content with publishdate in the future
@@ -12,8 +12,16 @@ enableRobotsTXT = true
 editor = "nano"
 languageCode = "en"
 language = "en"
-theme = "vncnt-hugo"
+theme = "hugo-coder"
 title = "Sam Calamos"
+
+paginate = 20
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "yourdiscussshortname"
 
 [permalinks]
   fixed = ":title/"
@@ -21,36 +29,56 @@ title = "Sam Calamos"
 
 [params]
   author = "Sam Calamos"
+  colorScheme = "dark"
   # email does still work but is deprecated.
   # use [params.contact.email] instead.
   #email = "john.doe@example.com"
-  description = "Landing Page"
-  bio = "I work in the Clouds ☁"
-  avatar = "images/BlueAlder_DP.png"
-  favicon = "img/favicon.ico"
+  #  = "Landing Page"
+  info = "I work in the Clouds ☁"
+  avatarURL = "images/BlueAlder_DP.png"
+  avatarSize = "size-xl"
+  favicon = "images/favicon/favicon.ico"
   error404 = "There is no such page."
+  hideCredits = true
+  customCSS = ["css/styles.css"]
 
-  [params.contact]
-    github = "https://github.com/BlueAlder"
-    #instagram = "https://instagram.com/jdoe"
-    twitter = "https://twitter.com/BlueAlder"
-    linkedin = "https://linkedin.com/in/samuelcalamos"
-    
-    # You may use (inline) tables for more versatility
-    # This allows sorting and even more icons.
-    # Just make sure not to mix key-value pairs, inline tables and tables,
-    # although keeping keeping this order is ok.
-    # See https://toml.io/en/v1.0.0 for details
-    # 0 = { name = "ello", icon = "ello", style = "fab", link = "" } # empty links are relative to site root
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/BlueAlder"
 
-    [params.contact.email]
-      name = "email" # may be omitted. defaults to key name
-      icon = "envelope" # may be omitted. defaults to key name
-      style = "fas" # may be omitted. default = "fas"
-      link = "mailto:sam.calamos@gmail.com"
-    # [params.contact.linkedin]
-    #   name = "linkedin"
-    #   icon = "linkedin"
-    #   style = "fas"
-    #   link = "https://linkedin.com/in/samuelcalamos"
-      
+[[params.social]]
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/BlueAlder" 
+
+[[params.social]]
+  name = "Email"
+  icon = "fa fa-envelope fa-2x"
+  weight = 3
+  url = "mailto:sam.calamos@gmail.com" 
+
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 3
+  url = "https://www.linkedin.com/in/samuelcalamos/" 
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Menu links
+[[menu.main]]
+  name = "Posts"
+  weight = 1
+  identifier = "posts"
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
