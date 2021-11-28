@@ -13,4 +13,4 @@ series = []
 
 ![image](https://miro.medium.com/max/1400/0*yVkJS11UQ6AiWtsg)
 
-DownUnderCTF 2021 was an amazing experience and I really enjoyed my role in the Infrastructure team. I wrote a small writeup about the infrastructure setup that we came up with this year which you can check out at [here](samcalamos.me/ductf-infra21).
+DownUnderCTF 2021 was an amazing experience and I really enjoyed my role in the Infrastructure team. I wrote a small writeup about the infrastructure setup that we came up with this year which you can check out at [here](https://samcalamos.me/ductf-infra21).
