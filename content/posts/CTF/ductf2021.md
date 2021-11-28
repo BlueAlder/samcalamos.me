@@ -11,3 +11,5 @@ externalLink = ""
 series = []
 +++
 
+
+DownUnderCTF 2021 was an amazing experience and I really enjoyed my role in the Infrastructure team. I wrote a small writeup about the infrastructure setup that we came up with this year which you can check out at [samcalamos.me/ductf-infra](samcalamos.me/ductf-infra).

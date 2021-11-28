@@ -1,0 +1,23 @@
+.avatar img {
+    width: 30rem;
+}
+
+.about h1 {
+    text-transform: uppercase;
+    font-size: 5rem;
+    line-height: 1.1em;
+}
+
+.footer {
+    display: none;
+}
+
+a {
+    /* transition: all .2s ease-in-out; */
+}
+
+a:hover {
+    /* font-style: italic; */
+    text-decoration: none;
+    /* transform: scale(1.4); */
+}
