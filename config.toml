@@ -99,14 +99,14 @@ author = "authors"
   name = "Github"
   icon = "fa fa-github fa-2x"
   weight = 1
-  url = "https://github.com/BlueAlder"
+  url = "/github"
   target = "_blank"
 
 [[params.social]]
   name = "Twitter"
   icon = "fa fa-twitter fa-2x"
   weight = 3
-  url = "https://twitter.com/BlueAlder" 
+  url = "/twitter" 
   target = "_blank"
 
 [[params.social]]
@@ -119,14 +119,14 @@ author = "authors"
   name = "LinkedIn"
   icon = "fa fa-linkedin fa-2x"
   weight = 3
-  url = "https://www.linkedin.com/in/samuelcalamos/" 
+  url = "/linkedin" 
   target = "_blank"
 
 [[params.social]]
   name = "Medium"
   icon = "fa fa-medium fa-2x"
   weight = 3
-  url = "https://medium.com/@sam.calamos"
+  url = "/medium"
   target = "_blank"
 
 [languages.en]

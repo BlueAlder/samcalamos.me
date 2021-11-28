@@ -3,3 +3,28 @@
   to = "https://medium.com/@sam.calamos/how-to-run-a-ctf-that-survives-the-first-5-minutes-fded87d26d53"
   status = 301
   force = false
+
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/BlueAlder"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/twitter"
+  to = "https://twitter.com/BlueAlder"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://www.linkedin.com/in/samuelcalamos/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/medium"
+  to = "https://medium.com/@sam.calamos"
+  status = 301
+  force = false
+

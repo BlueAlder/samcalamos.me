@@ -12,12 +12,6 @@
     display: none;
 }
 
-a {
-    /* transition: all .2s ease-in-out; */
-}
-
 a:hover {
-    /* font-style: italic; */
     text-decoration: none;
-    /* transform: scale(1.4); */
 }
