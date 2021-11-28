@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/ductf-infra"
+  to = "https://medium.com/@sam.calamos/how-to-run-a-ctf-that-survives-the-first-5-minutes-fded87d26d53"
+  status = 301
+  force = false
