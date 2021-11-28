@@ -15,7 +15,7 @@ enableEmoji = true
 author = "Samuel Calamos"
 description = "Samuel Calamos's portfolio website"
 keywords = "blog,developer,personal"
-info = ["I work in the Clouds ☁️", "Puzzles"]
+info = ["I work in the Clouds ☁️", "@bluealder"]
 avatarURL = "/images/BlueAlder_DP.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
@@ -31,7 +31,7 @@ rtl = false
 # "auto" (use preference set by browser)
 # "dark" (dark background, light foreground)
 # "light" (light background, dark foreground) (default)
-colorScheme = "dark"
+colorScheme = "auto"
 # Hide the toggle button, along with the associated vertical divider
 hideColorSchemeToggle = false
 # Series see also post count
@@ -138,7 +138,7 @@ languageName = ":uk:"
 # url = "about/"
 
 [[languages.en.menu.main]]
-name = "Blog"
+name = "A Peak into my Brain"
 weight = 2
 url = "posts/"
 

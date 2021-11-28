@@ -1,6 +1,12 @@
 [[redirects]]
-  from = "/ductf-infra"
+  from = "/ductf-infra21"
   to = "https://medium.com/@sam.calamos/how-to-run-a-ctf-that-survives-the-first-5-minutes-fded87d26d53"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/ductf-infra20"
+  to = "https://medium.com/@sam.calamos/creating-scalable-ctf-infrastructure-on-google-cloud-platform-with-kubernetes-and-app-engine-8c0a7847a53c"
   status = 301
   force = false
 
