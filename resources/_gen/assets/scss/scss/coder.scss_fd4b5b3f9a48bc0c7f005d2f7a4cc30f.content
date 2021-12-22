@@ -3041,7 +3041,7 @@ html {
 
 body {
   color: #292c69;
-  background-color: #dec8d4;
+  background-color: #e5d3e0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, "PingFang SC", STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
   font-size: 1.8em;
   font-weight: 400;
@@ -3406,7 +3406,7 @@ figure {
     font-weight: 700;
     margin: 0 -0.75rem;
     padding: 0.2rem 3.5rem;
-    border-bottom: 1px solid #dec8d4; }
+    border-bottom: 1px solid #e5d3e0; }
     .notice .notice-title i {
       position: absolute;
       top: 50%;
@@ -3496,7 +3496,7 @@ figure {
         padding: 0;
         max-height: 0;
         width: 100%;
-        background-color: #dec8d4;
+        background-color: #e5d3e0;
         border-top: solid 2px #e0e0e0;
         border-bottom: solid 2px #e0e0e0;
         transition: opacity 0.25s, max-height 0.15s linear; } }

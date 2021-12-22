@@ -1,5 +1,5 @@
 body.colorscheme-dark {
-  color: #dec8d4;
+  color: #e5d3e0;
   background-color: #292c69; }
   body.colorscheme-dark a {
     color: #ffffff; }
@@ -9,7 +9,7 @@ body.colorscheme-dark {
   body.colorscheme-dark h4,
   body.colorscheme-dark h5,
   body.colorscheme-dark h6 {
-    color: #dec8d4; }
+    color: #e5d3e0; }
     body.colorscheme-dark h1:hover .heading-link,
     body.colorscheme-dark h2:hover .heading-link,
     body.colorscheme-dark h3:hover .heading-link,
@@ -39,7 +39,7 @@ body.colorscheme-dark {
       text-decoration: none; }
   body.colorscheme-dark code {
     background-color: #424242;
-    color: #dec8d4; }
+    color: #e5d3e0; }
   body.colorscheme-dark pre code {
     background-color: inherit;
     color: inherit; }
@@ -52,7 +52,7 @@ body.colorscheme-dark {
     border-collapse: collapse; }
   body.colorscheme-dark table td,
   body.colorscheme-dark table th {
-    border: 2px solid #dec8d4; }
+    border: 2px solid #e5d3e0; }
   body.colorscheme-dark table tr:first-child th {
     border-top: 0; }
   body.colorscheme-dark table tr:last-child td {
@@ -66,7 +66,7 @@ body.colorscheme-dark {
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
-    color: #dec8d4;
+    color: #e5d3e0;
     background-color: #292c69; }
     body.colorscheme-auto a {
       color: #ffffff; }
@@ -76,7 +76,7 @@ body.colorscheme-dark {
     body.colorscheme-auto h4,
     body.colorscheme-auto h5,
     body.colorscheme-auto h6 {
-      color: #dec8d4; }
+      color: #e5d3e0; }
       body.colorscheme-auto h1:hover .heading-link,
       body.colorscheme-auto h2:hover .heading-link,
       body.colorscheme-auto h3:hover .heading-link,
@@ -106,7 +106,7 @@ body.colorscheme-dark {
         text-decoration: none; }
     body.colorscheme-auto code {
       background-color: #424242;
-      color: #dec8d4; }
+      color: #e5d3e0; }
     body.colorscheme-auto pre code {
       background-color: inherit;
       color: inherit; }
@@ -119,7 +119,7 @@ body.colorscheme-dark {
       border-collapse: collapse; }
     body.colorscheme-auto table td,
     body.colorscheme-auto table th {
-      border: 2px solid #dec8d4; }
+      border: 2px solid #e5d3e0; }
     body.colorscheme-auto table tr:first-child th {
       border-top: 0; }
     body.colorscheme-auto table tr:last-child td {
@@ -134,17 +134,17 @@ body.colorscheme-dark {
 body.colorscheme-dark .content .post .tags .tag {
   background-color: #424242; }
   body.colorscheme-dark .content .post .tags .tag a {
-    color: #dec8d4; }
+    color: #e5d3e0; }
   body.colorscheme-dark .content .post .tags .tag a:active {
-    color: #dec8d4; }
+    color: #e5d3e0; }
 
 body.colorscheme-dark .content .list ul li .title {
-  color: #dec8d4; }
+  color: #e5d3e0; }
   body.colorscheme-dark .content .list ul li .title:hover, body.colorscheme-dark .content .list ul li .title:focus {
     color: #ffffff; }
 
 body.colorscheme-dark .content .centered .about ul li a {
-  color: #dec8d4; }
+  color: #e5d3e0; }
   body.colorscheme-dark .content .centered .about ul li a:hover, body.colorscheme-dark .content .centered .about ul li a:focus {
     color: #ffffff; }
 
@@ -152,15 +152,15 @@ body.colorscheme-dark .content .centered .about ul li a {
   body.colorscheme-auto .content .post .tags .tag {
     background-color: #424242; }
     body.colorscheme-auto .content .post .tags .tag a {
-      color: #dec8d4; }
+      color: #e5d3e0; }
     body.colorscheme-auto .content .post .tags .tag a:active {
-      color: #dec8d4; }
+      color: #e5d3e0; }
   body.colorscheme-auto .content .list ul li .title {
-    color: #dec8d4; }
+    color: #e5d3e0; }
     body.colorscheme-auto .content .list ul li .title:hover, body.colorscheme-auto .content .list ul li .title:focus {
       color: #ffffff; }
   body.colorscheme-auto .content .centered .about ul li a {
-    color: #dec8d4; }
+    color: #e5d3e0; }
     body.colorscheme-auto .content .centered .about ul li a:hover, body.colorscheme-auto .content .centered .about ul li a:focus {
       color: #ffffff; } }
 
@@ -173,7 +173,7 @@ body.colorscheme-dark .notice .notice-title {
 
 body.colorscheme-dark .navigation a,
 body.colorscheme-dark .navigation span {
-  color: #dec8d4; }
+  color: #e5d3e0; }
 
 body.colorscheme-dark .navigation a:hover, body.colorscheme-dark .navigation a:focus {
   color: #ffffff; }
@@ -186,24 +186,24 @@ body.colorscheme-dark .navigation a:hover, body.colorscheme-dark .navigation a:f
 
 @media only screen and (max-width: 768px) {
   body.colorscheme-dark .navigation .navigation-list .menu-separator {
-    border-top: 2px solid #dec8d4; } }
+    border-top: 2px solid #e5d3e0; } }
 
 @media only screen and (max-width: 768px) {
   body.colorscheme-dark .navigation #menu-toggle:checked + label > i {
     color: #424242; } }
 
 body.colorscheme-dark .navigation i {
-  color: #dec8d4; }
+  color: #e5d3e0; }
   body.colorscheme-dark .navigation i:hover, body.colorscheme-dark .navigation i:focus {
     color: #ffffff; }
 
 body.colorscheme-dark .navigation .menu-button i:hover, body.colorscheme-dark .navigation .menu-button i:focus {
-  color: #dec8d4; }
+  color: #e5d3e0; }
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .navigation a,
   body.colorscheme-auto .navigation span {
-    color: #dec8d4; }
+    color: #e5d3e0; }
   body.colorscheme-auto .navigation a:hover, body.colorscheme-auto .navigation a:focus {
     color: #ffffff; } }
 
@@ -215,7 +215,7 @@ body.colorscheme-dark .navigation .menu-button i:hover, body.colorscheme-dark .n
 
 @media only screen and (prefers-color-scheme: dark) and (max-width: 768px) {
   body.colorscheme-auto .navigation .navigation-list .menu-separator {
-    border-top: 2px solid #dec8d4; } }
+    border-top: 2px solid #e5d3e0; } }
 
 @media only screen and (prefers-color-scheme: dark) and (max-width: 768px) {
   body.colorscheme-auto .navigation #menu-toggle:checked + label > i {
@@ -223,26 +223,26 @@ body.colorscheme-dark .navigation .menu-button i:hover, body.colorscheme-dark .n
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .navigation i {
-    color: #dec8d4; }
+    color: #e5d3e0; }
     body.colorscheme-auto .navigation i:hover, body.colorscheme-auto .navigation i:focus {
       color: #ffffff; }
   body.colorscheme-auto .navigation .menu-button i:hover, body.colorscheme-auto .navigation .menu-button i:focus {
-    color: #dec8d4; } }
+    color: #e5d3e0; } }
 
 body.colorscheme-dark .taxonomy-element {
   background-color: #424242; }
   body.colorscheme-dark .taxonomy-element a {
-    color: #dec8d4; }
+    color: #e5d3e0; }
   body.colorscheme-dark .taxonomy-element a:active {
-    color: #dec8d4; }
+    color: #e5d3e0; }
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .taxonomy-element {
     background-color: #424242; }
     body.colorscheme-auto .taxonomy-element a {
-      color: #dec8d4; }
+      color: #e5d3e0; }
     body.colorscheme-auto .taxonomy-element a:active {
-      color: #dec8d4; } }
+      color: #e5d3e0; } }
 
 body.colorscheme-dark .footer a {
   color: #ffffff; }
@@ -252,21 +252,21 @@ body.colorscheme-dark .footer a {
     color: #ffffff; } }
 
 body.colorscheme-dark .float-container a {
-  color: #dec8d4;
+  color: #e5d3e0;
   background-color: #424242; }
   body.colorscheme-dark .float-container a:hover, body.colorscheme-dark .float-container a:focus {
     color: #ffffff; }
     @media only screen and (max-width: 768px) {
       body.colorscheme-dark .float-container a:hover, body.colorscheme-dark .float-container a:focus {
-        color: #dec8d4; } }
+        color: #e5d3e0; } }
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto .float-container a {
-    color: #dec8d4;
+    color: #e5d3e0;
     background-color: #424242; }
     body.colorscheme-auto .float-container a:hover, body.colorscheme-auto .float-container a:focus {
       color: #ffffff; } }
     @media only screen and (prefers-color-scheme: dark) and (max-width: 768px) {
       body.colorscheme-auto .float-container a:hover, body.colorscheme-auto .float-container a:focus {
-        color: #dec8d4; } }
+        color: #e5d3e0; } }
 
 /*# sourceMappingURL=coder-dark.css.map */

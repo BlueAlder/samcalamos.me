@@ -15,7 +15,7 @@ enableEmoji = true
 author = "Samuel Calamos"
 description = "Samuel Calamos's portfolio website"
 keywords = "blog,developer,personal"
-info = ["I work in the Clouds ☁️", "@bluealder"]
+info = ["I work in the Clouds ☁️", "bluealder.eth"]
 avatarURL = "/images/BlueAlder_DP.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
@@ -108,12 +108,6 @@ author = "authors"
   weight = 3
   url = "/twitter" 
   target = "_blank"
-
-[[params.social]]
-  name = "Email"
-  icon = "fa fa-envelope fa-2x"
-  weight = 3
-  url = "mailto:sam.calamos@gmail.com" 
 
 [[params.social]]
   name = "LinkedIn"
