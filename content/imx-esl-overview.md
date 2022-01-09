@@ -1,5 +1,5 @@
 ---
-title: "Imx ESL Overview"
+title: "IMX ESL Overview"
 date: 2022-01-09T17:47:18+11:00
 draft: false
 slug: "imx-esl"
