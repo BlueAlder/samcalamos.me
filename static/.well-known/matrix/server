@@ -1,1 +1,3 @@
-matrix.samcalamos.me
+{
+    "m.server": "matrix.samcalamos.me:8448"
+}
