@@ -136,6 +136,10 @@ name = "A Peak into my Brain"
 weight = 2
 url = "posts/"
 
+[markup]
+  [markup.highlight]
+    style = 'js'
+
 # [[languages.en.menu.main]]
 # name = "Projects"
 # weight = 3
