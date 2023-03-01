@@ -1,5 +1,5 @@
 +++ 
-draft = true
+draft = false
 date = 2023-03-01T12:50:25+11:00
 title = "Wallet Mining - DamnVulnerableDeFi #13"
 description = "Writeup for the Wallet Mining Challenge"
