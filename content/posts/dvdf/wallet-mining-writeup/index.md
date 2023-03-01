@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2023-03-01T12:50:25+11:00
-title = "Wallet Mining - DamnVulnerableDeFi #13"
+title = "Wallet Mining - DamnVulnerableDeFi v3 #13"
 description = "Writeup for the Wallet Mining Challenge"
 slug = ""
 authors = []
@@ -10,8 +10,9 @@ categories = []
 externalLink = ""
 series = []
 +++
+[![Wallet Mining Thumbnail](wallet-mining.png)](https://www.youtube.com/watch?v=7PS-wuIsZ4A)
 
-# Wallet Mining Writeup
+# Writeup
 
 This challenge consists of two main exploits to solve the challenge.
 1. Replaying the deploying of Gnosis Safes Master Copy and factory to get code
@@ -24,6 +25,7 @@ GitHub](https://github.com/BlueAlder/damn-vulnerable-defi/blob/master/test/walle
 
 [My YouTube walkthrough is also
 available.](https://www.youtube.com/watch?v=7PS-wuIsZ4A)
+
 
 ## Part 1: Getting that 20 million DVT
 
