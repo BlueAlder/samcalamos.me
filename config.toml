@@ -132,9 +132,13 @@ languageName = ":uk:"
 # url = "about/"
 
 [[languages.en.menu.main]]
-name = "A Peak into my Brain"
+name = "A peak into my brain 🧠"
 weight = 2
 url = "posts/"
+
+[markup]
+  [markup.highlight]
+    style = 'js'
 
 # [[languages.en.menu.main]]
 # name = "Projects"
