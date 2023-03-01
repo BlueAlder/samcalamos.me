@@ -22,6 +22,9 @@ This challenge consists of two main exploits to solve the challenge.
 The full coded solution for this challenge is available on [my
 GitHub](https://github.com/BlueAlder/damn-vulnerable-defi/blob/master/test/wallet-mining/wallet-mining.challenge.js).
 
+[My YouTube walkthrough is also
+available.](https://www.youtube.com/watch?v=7PS-wuIsZ4A)
+
 ## Part 1: Getting that 20 million DVT
 
 To get the 20 million tokens located at the deposit address we first need to
