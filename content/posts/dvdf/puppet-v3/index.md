@@ -14,10 +14,11 @@ series = []
 # Writeup
 
 This challenge is the third "puppet" challenge relating to Uniswap Pools and is
-very similar to Puppet V2, so I will not be covering the basic Uniswap concepts but will be
-focusing on the Uniswap V3 concepts related to this challenge. To catchup I reccomend watching my [YouTube
-video on Puppet V2](https://www.youtube.com/watch?v=M9s8wWOP9LU) (at the start
-of the video I also reccomend watching Puppet V1)
+very similar to Puppet V2, so I will not be covering the basic Uniswap concepts
+but will be focusing on the Uniswap V3 concepts related to this challenge. To
+catchup I reccomend watching my [YouTube video on Puppet
+V2](https://www.youtube.com/watch?v=M9s8wWOP9LU) (at the start of the video I
+also reccomend watching Puppet V1)
 
 ## Challenge Overview
 
@@ -56,7 +57,8 @@ data over a specified period (in this case 10 minutes) to calculate the average
 price in that time. 
 
 To do this Uniswap V3 uses a concept of `observations`. Observations are made
-whenever a swap is made which changes the tick price of a pool. 
+whenever a swap is made which changes the tick price of a pool. However
+observations are made BEFORE the new swap price is calculated.
 
 ```sol
 struct Observation {
@@ -87,39 +89,46 @@ When a swap happens and say the new tick of the pool becomes 25 and it has
 been 10 seconds since the last observation. Then the latest observation will
 have a tickCumulative of:
 
-`0 + (25 * 10) = 250`
+`0 + (0 * 10) = 0`
+
+This is because it is taking the price that was calculated BEFORE the swap happened.
 
 Then another swap happens and the new tick price is 75 and it has been 100
 seconds since the last observation. Then the latest observsation will have a
 tickCumulative of:
 
-`250 + (75 * 100) = 7750`
+`0 + (25 * 100) = 250`
+
+Then finally another swap happens 50 seconds later and the new tick price is 90.
+
+`250 + (75 * 50) = 4000`
 
 So now we have 3 observations stored.
 
 | Observation Index | timestamp| tickCumulative|
 |----------|--------|-----------|
 | 0| 0| 0|
-|1| 10| 250|
-|2|110| 7750|
+| 1|10| 0|
+|2| 110| 250| 
+|3|160| 4000|
 
-So now say we want to calculate the TWAP over the last 50 seconds and we call
-this at timestamp=130. In other words we are asking, what was the average price
-between timestamps 130 and 80?
+So now say we want to calculate the TWAP over the last 100 seconds and we call
+this at timestamp=180. In other words we are asking, what was the average price
+between timestamps 180 and 80?
 
-We calculate the tickCumulative at timestamp=130, since the latest observation
-*should* be the same as the current tick value. We multiply the currentTick by
+We calculate the tickCumulative at timestamp=180. We multiply the currentTick by
 the deltaTime (which is 20 seconds) since the last observation and add it to the
-accumulator to get our new tickCumulative.
+last observation cumulative to get our new tickCumulative. Remember that the
+latest tick price is 90
 
 ```
 last.tickCumulative + (currentTick * deltaSeconds)
-7750 + (75 * 20) = 9250
+4000 + (90 * 20) = 5800
 ```
 
-This gives us our current tickCumulative reading of 9250.
+This gives us our current tickCumulative reading of 5800.
 
-We then want to calculate the tickCumulative at timestamp=80 (which is 50
+We then want to calculate the tickCumulative at timestamp=80 (which is 100
 seconds ago, in other words at the start of the TWAP period). This is done by
 binary searching until either we find an observation which was taken at that
 exact timestamp or we find two observations which are next to eachother which would contain the timestamp.
@@ -151,7 +160,7 @@ tickCumulative per second between the two observations.
 
 ```
 averageChangeTickCumulative = (right.tickCumulative - left.tickCumulative) / observationTimeDelta
-75 = (7750 - 250) / 100
+2.5 = (250 - 0) / 100
 ```
 
 We then multiply this by the timeDelta  and add the left.tickCumulative to get
@@ -159,21 +168,21 @@ the interpolated tickCumulative at timestamp=80.
 
 ```
 tickCumulative = left.tickCumulative + (averageChangeTickCumulative * targetDelta)
-5500 = 250 + (75 * 70)
+175 = 0 + (2.5 * 70)
 ```
 
-So we now have the tickCumulatives at t=80 and t=130 of 5500 and 9250
+So we now have the tickCumulatives at t=80 and t=180 of 175 and 5800
 respectively. So now let's calculate the average tick for this period. We do this by subtracting the two tickCumulatives and then divide by the number of seconds in the period.
 
 ```
 timeWeightedAverageTick = (t130TickCumulative - t80TickCumulative) / period
-75  = (9250 - 5500) / 50
+56.25  = (5800 - 175) / 100
 ```
 
-From there we can calculate the price from the tick. The main concept here is
-that we are using the accumulated ticks which creates heavier weights for
-observations that cover a longer period of time which mitigates Oracle
-inaccuracy during times of high violatilty.
+From there we can calculate the price from the tick with (1.0001 ** 56.25). The
+main concept here is that we are using the accumulated ticks which creates
+heavier weights for observations that cover a longer period of time which
+mitigates Oracle inaccuracy during times of high violatilty.
 
 
 
@@ -242,7 +251,10 @@ lending the 1,000,000 DVT tokens, we are still going to get a quote of 3,000,000
 WETH because the TWAP calculation will give the new price a weight of 0 since it
 just happened (remember the calculation is tick * (timeSinceLastObservation)).
 
-So let's just wait some time to increase the weight of the new price in the calculation. Since we only have 115 seconds according to the constraints of the challenge, we can jump 110 seconds which will leave us a couple of seconds to perform any other transactions (such as approvals and the swap).
+So let's just wait some time to increase the weight of the new price in the
+calculation. Since we only have 115 seconds according to the constraints of the
+challenge, we can jump 110 seconds which will leave us a couple of seconds to
+perform any other transactions (such as approvals and the swap).
 
 ```javascript
 // Increase block time by 110 seconds
@@ -250,7 +262,9 @@ log("Increasing block time by 110 seconds");
 await time.increase(110);
 ```
 
-Now let's get a new quote to see how much borrowing the 1,000,000 DVT tokens will be. Then we approve that amount to be transfered to the contract and then execute the `borrow()` function.
+Now let's get a new quote to see how much borrowing the 1,000,000 DVT tokens
+will be. Then we approve that amount to be transfered to the contract and then
+execute the `borrow()` function.
 
 ```javascript
 const quote = await attackLendingPool.calculateDepositOfWETHRequired(LENDING_POOL_INITIAL_TOKEN_BALANCE);
@@ -258,5 +272,7 @@ await attackWeth.approve(attackLendingPool.address, quote);
 await attackLendingPool.borrow(LENDING_POOL_INITIAL_TOKEN_BALANCE);
 ```
 
-If everything goes right, then the borrow function should succeed since we have managed to lower the TWAP enough that it becomes super cheap to borrow all the funds and complete the challenge!
+If everything goes right, then the borrow function should succeed since we have
+managed to lower the TWAP enough that it becomes super cheap to borrow all the
+funds and complete the challenge!
 
