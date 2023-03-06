@@ -183,13 +183,61 @@ v3 Development Book.](https://uniswapv3book.com/docs/milestone_5/price-oracle/).
 But I am going to use prices for the rest of the explaination. -->
 
 
-### Let's do the exploit
+### The Exploit
 
-But in this challenge we manipulate the Time Weighted Average Price (TWAP) by
-first heavily devaluing the DVT token relative to WETH, then waiting an amount
-of time such that the oracle price is within our range of depositing the
-collatoral required. This is possible because the TWAP period is only 10 minutes 
+In this challenge the exploit is simply that the Time Weighted Average Price
+(TWAP) of 10 minutes is not long enough to mitigate short term violatility. In
+the constraints of the solution we are required to steal all funds from the
+lending pool in less than 115 seconds which is just under 20% of the TWAP
+period.
 
-I won't go into all the details of how Uniswap V3 works as that is not is super
-relevant to the exploit. The main difference that we need to know in this
-challenge in how Uniswap calculates oracle prices and that 
+So this is our plan:
+
+1. Swap all our DVT for WETH to heavily devalue DVT relative to WETH
+2. Wait some time so the TWAP's calculation uses more of the new price in it's
+   calculation.
+3. Call the lending pool to get the funds at a heavily discounted rate.
+
+To perform the swap we first will want to connect to the Uniswap V3 router to
+make our lives much easier. The router will do a lot of calculations for us to
+make it more user friendly than the regular Uniswap V3 pools. 
+
+We can do this by grabbing the official Uniswap V3 router address from the
+uniswap docs and connecting to it, similarly to how the challenge is setup to
+connect to the existing Uniswap V3 Factory.
+
+```js
+const uniswapRouterAddress = "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45";
+log(`Connecting to uniswap router at mainnet address ${uniswapRouterAddress}`)
+const uniswapRouter = new ethers.Contract(uniswapRouterAddress, routerJson.abi, player);
+```
+
+We then need to approve the **router** to take our DVT tokens for the trade and
+then perform the swap.
+
+```js
+log("Approving all player tokens to be taken from the uniswap router");
+await attackToken.approve(uniswapRouter.address, PLAYER_INITIAL_TOKEN_BALANCE);
+
+log("Swapping all player tokens for as much WETH as possible.");
+await uniswapRouter.exactInputSingle(
+    [attackToken.address,
+    weth.address,   
+    3000,
+    player.address,
+    PLAYER_INITIAL_TOKEN_BALANCE, // 110 DVT TOKENS
+    0,
+    0],
+    {
+        gasLimit: 1e7
+    }
+);
+```
+
+This swap is essentially performing the following operation "please swap exactly
+110 DVT tokens for as much WETH as possible".
+
+However, if we now call the lending pool and get a quote for the price of
+lending the 1,000,000 DVT tokens, we are still going to get a quote of 3,000,000
+WETH because the TWAP calculation will give the new price a weight of 0 since it
+just happened (remember the calculation is tick * (timeSinceLastObservation))
