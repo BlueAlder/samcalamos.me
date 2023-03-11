@@ -1,6 +1,6 @@
 +++ 
 draft = true
-date = 2023-03-01T16:33:31+11:00
+date = 2023-03-11T16:33:31+11:00
 title = "Puppet V3 - DamnVulnerableDeFi v3 #14"
 description = "Writeup for the Puppet v3 challenge"
 slug = ""
@@ -9,6 +9,7 @@ tags = ["defi", "DamnVulnerableDeFi", "puppet v3", "writeup"]
 categories = []
 externalLink = ""
 series = []
+toc = true
 +++
 
 # Writeup
@@ -16,9 +17,9 @@ series = []
 This challenge is the third "puppet" challenge relating to Uniswap Pools and is
 very similar to Puppet V2, so I will not be covering the basic Uniswap concepts
 but will be focusing on the Uniswap V3 concepts related to this challenge. To
-catchup I reccomend watching my [YouTube video on Puppet
+catchup I recommend watching my [YouTube video on Puppet
 V2](https://www.youtube.com/watch?v=M9s8wWOP9LU) (at the start of the video I
-also reccomend watching Puppet V1)
+also recommend watching Puppet V1)
 
 ## Challenge Overview
 
@@ -82,7 +83,7 @@ tickCumulative = lastObservation.tickCumulative  + (currentTick *
 deltaTimeSinceLastObservation)
 ```
 
-When a pool is initialised the first observation will have a tickCumulative of 0
+When a pool is initialized the first observation will have a tickCumulative of 0
 since no time has passed.
 
 When a swap happens and say the new tick of the pool becomes 25 and it has
@@ -94,7 +95,7 @@ have a tickCumulative of:
 This is because it is taking the price that was calculated BEFORE the swap happened.
 
 Then another swap happens and the new tick price is 75 and it has been 100
-seconds since the last observation. Then the latest observsation will have a
+seconds since the last observation. Then the latest observation will have a
 tickCumulative of:
 
 `0 + (25 * 100) = 250`
@@ -131,7 +132,7 @@ This gives us our current tickCumulative reading of 5800.
 We then want to calculate the tickCumulative at timestamp=80 (which is 100
 seconds ago, in other words at the start of the TWAP period). This is done by
 binary searching until either we find an observation which was taken at that
-exact timestamp or we find two observations which are next to eachother which would contain the timestamp.
+exact timestamp or we find two observations which are next to each other which would contain the timestamp.
 
 In this case we would find the two observations at indexes 1 and 2, I am going
 to refer to these as the left and right boundary respectively. Since we don't
@@ -140,10 +141,10 @@ those two observations to calculate the estimated tick at that time (this is
 fancy for drawing a line between the two points). 
 
 To calculate this we first calculate the time difference between the left and
-right observsation's timestamps.
+right observation's timestamps.
 
 ```
-observationTimeDelta = right.timestamp - left.timestmap
+observationTimeDelta = right.timestamp - left.timestamp
 100 = 110 - 10
 ```
 
@@ -154,7 +155,7 @@ targetDelta = target - left.timestamp
 70 = 80 - 10
 ```
 
-Then to "draw a line" between the two observsations and calculate the
+Then to "draw a line" between the two observations and calculate the
 interpolated value at that timestamp we calculate the average change in
 tickCumulative per second between the two observations.
 
@@ -172,7 +173,9 @@ tickCumulative = left.tickCumulative + (averageChangeTickCumulative * targetDelt
 ```
 
 So we now have the tickCumulatives at t=80 and t=180 of 175 and 5800
-respectively. So now let's calculate the average tick for this period. We do this by subtracting the two tickCumulatives and then divide by the number of seconds in the period.
+respectively. So now let's calculate the average tick for this period. We do
+this by subtracting the two tickCumulatives and then divide by the number of
+seconds in the period.
 
 ```
 timeWeightedAverageTick = (t130TickCumulative - t80TickCumulative) / period
@@ -182,20 +185,20 @@ timeWeightedAverageTick = (t130TickCumulative - t80TickCumulative) / period
 From there we can calculate the price from the tick with (1.0001 ** 56.25). The
 main concept here is that we are using the accumulated ticks which creates
 heavier weights for observations that cover a longer period of time which
-mitigates Oracle inaccuracy during times of high violatilty.
+mitigates Oracle inaccuracy during times of high volatility.
 
 
 
 <!-- *V3 actually stores the ticks, but this is easier to understand conceptually. To
 understand the maths behind how this works, check out [this page in the Uniswap
 v3 Development Book.](https://uniswapv3book.com/docs/milestone_5/price-oracle/).
-But I am going to use prices for the rest of the explaination. -->
+But I am going to use prices for the rest of the explanation. -->
 
 
 ### The Exploit
 
 In this challenge the exploit is simply that the Time Weighted Average Price
-(TWAP) of 10 minutes is not long enough to mitigate short term violatility. In
+(TWAP) of 10 minutes is not long enough to mitigate short term volatility. In
 the constraints of the solution we are required to steal all funds from the
 lending pool in less than 115 seconds which is just under 20% of the TWAP
 period.
@@ -209,7 +212,7 @@ So this is our plan:
 
 To perform the swap we first will want to connect to the Uniswap V3 router to
 make our lives much easier. The router will do a lot of calculations for us to
-make it more user friendly than the regular Uniswap V3 pools. 
+make it more user friendly than interacting directly with the Uniswap V3 pools. 
 
 We can do this by grabbing the official Uniswap V3 router address from the
 uniswap docs and connecting to it, similarly to how the challenge is setup to
@@ -263,7 +266,7 @@ await time.increase(110);
 ```
 
 Now let's get a new quote to see how much borrowing the 1,000,000 DVT tokens
-will be. Then we approve that amount to be transfered to the contract and then
+will be. Then we approve that amount to be transferred to the contract and then
 execute the `borrow()` function.
 
 ```javascript
