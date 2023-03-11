@@ -46,7 +46,7 @@ pool.
 
 The main concept here I will cover is how the Oracle price is calculated. If you
 don't care about the Uniswap V3 details and just want to get to the exploit you
-can skip over the next section :).
+can skip over the [next section](#the-exploit) :).
 
 ### TWAP Oracle
 
@@ -187,7 +187,10 @@ main concept here is that we are using the accumulated ticks which creates
 heavier weights for observations that cover a longer period of time which
 mitigates Oracle inaccuracy during times of high volatility.
 
-
+There is also more to this that includes cardinality of the pool, but this is
+not relevant in this particular challenge. For further reading on the topic
+I recommend reading the [Uniswap V3 Development Book's chapter on the Price
+Oracle](https://uniswapv3book.com/docs/milestone_5/price-oracle/).
 
 <!-- *V3 actually stores the ticks, but this is easier to understand conceptually. To
 understand the maths behind how this works, check out [this page in the Uniswap
