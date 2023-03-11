@@ -6,6 +6,7 @@ description = "Writeup for the Puppet v3 challenge"
 slug = ""
 authors = []
 tags = ["defi", "DamnVulnerableDeFi", "puppet v3", "writeup"]
+images = ["BlueAlder_DP.png"]
 categories = []
 externalLink = ""
 series = []
