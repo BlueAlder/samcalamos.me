@@ -13,6 +13,8 @@ series = []
 toc = true
 +++
 
+[![puppet-v3 thumbnail](./thumbnail.png)](https://youtu.be/739nV8FuZE8)
+
 # Writeup
 
 This challenge is the third "puppet" challenge relating to Uniswap Pools and is
@@ -21,6 +23,9 @@ but will be focusing on the Uniswap V3 concepts related to this challenge. To
 catchup I recommend watching my [YouTube video on Puppet
 V2](https://www.youtube.com/watch?v=M9s8wWOP9LU) (at the start of the video I
 also recommend watching Puppet V1)
+
+[My YouTube walkthrough of this challenge is also
+available.](https://youtu.be/739nV8FuZE8)
 
 ## Challenge Overview
 

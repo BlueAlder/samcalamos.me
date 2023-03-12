@@ -9,6 +9,7 @@ tags = ["defi", "DamnVulnerableDeFi", "wallet mining", "writeup"]
 categories = []
 externalLink = ""
 series = []
+toc = true
 +++
 [![Wallet Mining Thumbnail](wallet-mining.png)](https://www.youtube.com/watch?v=7PS-wuIsZ4A)
 
@@ -112,7 +113,7 @@ out [the
 code](https://github.com/BlueAlder/damn-vulnerable-defi/blob/2b04ed65617c401032ae3388ce4d33aea224a435/test/wallet-mining/wallet-mining.challenge.js#L167)
 to see how this is implemented.
 
-# Part 2: Bricking the UUPS Proxy
+## Part 2: Bricking the UUPS Proxy
 
 To get the remaining 43 tokens we need to take a look at the contracts provided.
 Working backwards we need to call the `drop()` function on the WalletDeployer
