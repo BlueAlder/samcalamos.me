@@ -1,4 +1,11 @@
 [[redirects]]
+  from = "/mta-hunt"
+  to = "https://medium.com/@sam.calamos/building-a-web3%EF%B8%8F%E2%83%A3-enabled-digital-scavenger-hunt-424a1f439b5c"
+  status = 301
+  force = false
+
+
+[[redirects]]
   from = "/ductf-infra22"
   to = "https://downunderctf.com/blog/2022/infra-writeup/"
   status = 301
