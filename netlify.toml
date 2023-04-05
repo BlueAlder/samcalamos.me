@@ -1,4 +1,10 @@
 [[redirects]]
+  from = "/ductf-infra22"
+  to = "https://downunderctf.com/blog/2022/infra-writeup/"
+  status = 301
+  force = false
+
+[[redirects]]
   from = "/ductf-infra21"
   to = "https://medium.com/@sam.calamos/how-to-run-a-ctf-that-survives-the-first-5-minutes-fded87d26d53"
   status = 301
